@@ -2,7 +2,7 @@ import math
 
 degree = 15
 radian = math.radians(degree)
-print("Radian:", round(radian, 6))
+print("Radian:", round(radian, 6)) #rounds up to 6 digits
 
 height = 5
 base1 = 5
@@ -12,7 +12,7 @@ print("Trapezoid area:", trapezoid_area)
 
 n_sides = 4
 side_length = 25
-polygon_area = (n_sides * side_length**2) / (4 * math.tan(math.pi / n_sides))
+polygon_area = (n_sides * side_length**2) / (4 * math.tan(math.pi / n_sides)) #basic formula
 print("Polygon area:", polygon_area)
 
 base = 5
