@@ -15,7 +15,7 @@ for price in prices:
 
 # Finding product names
 products = re.findall(r'\d+\.\s*\n(.+)', text) 
-#any list followed after any number, dot, whitcase and a newline
+#any line following after any number, dot, whitcase and a newline
 
 print("\nProducts:")
 for p in products:
