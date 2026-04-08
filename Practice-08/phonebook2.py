@@ -44,21 +44,21 @@ def delete_contact(value):
 
 
 
-print(search_contacts("Beka"))
+print(search_contacts("b"))
 
-upsert_contact("Beka",767)
-print(search_contacts("Beka"))
+#upsert_contact("Beka",767)
+#print(search_contacts("Beka"))
 
-names = ["Alice", "Bob", "Charlie"]
-phones = ["555-1234", "abc", "+1 (555) 678-910"]
-invalids = upsert_multiple_contacts(names, phones)
-print("Invalid entries:", invalids)
+#names = ["Alice", "Bob", "Charlie"]
+#phones = ["555-1234", "abc", "+1 (555) 678-910"]
+#invalids = upsert_multiple_contacts(names, phones)
+#print("Invalid entries:", invalids)
 
-page1 = get_contacts_paginated(5, 0)
+page1 = get_contacts_paginated(2, 2)
 print("Page 1:", page1)
 
-delete_contact("Alice")
-print(search_contacts("Alice"))
+#delete_contact("Alice")
+#print(search_contacts("Alice"))
 
 cursor.close()
 conn.close()
