@@ -1,0 +1,60 @@
+import pygame
+import sys
+
+pygame.init()
+
+# Window setup
+WIDTH, HEIGHT = 600, 400
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Red Ball Game")
+
+# Colors
+WHITE = (255, 255, 255)
+RED = (255, 0, 0)
+
+# Ball properties
+radius = 25
+x = WIDTH // 2
+y = HEIGHT // 2
+step = 20  # movement per key press
+
+clock = pygame.time.Clock()
+
+running = True
+while running:
+    screen.fill(WHITE)
+
+    # Draw ball
+    pygame.draw.circle(screen, RED, (x, y), radius)
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+        if event.type == pygame.KEYDOWN:
+
+            # LEFT
+            if event.key == pygame.K_LEFT:
+                if x - step - radius >= 0:
+                    x -= step
+
+            # RIGHT
+            elif event.key == pygame.K_RIGHT:
+                if x + step + radius <= WIDTH:
+                    x += step
+
+            # UP
+            elif event.key == pygame.K_UP:
+                if y - step - radius >= 0:
+                    y -= step
+
+            # DOWN
+            elif event.key == pygame.K_DOWN:
+                if y + step + radius <= HEIGHT:
+                    y += step
+
+    pygame.display.flip()
+    clock.tick(60)  # smooth frame rate
+
+pygame.quit()
+sys.exit()
